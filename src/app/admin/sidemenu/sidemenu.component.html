@@ -1,0 +1,110 @@
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+	<div class="sidebar-logo">
+		<a [routerLink]="'/admin'">
+			<img src="assets/img/logo-icon.png" class="img-fluid" alt="">
+		</a>
+	</div>
+	<div class="sidebar-inner slimscroll">
+		<div id="sidebar-menu" class="sidebar-menu">
+			<ul>
+				<li [className]="page === 'dashboard'? 'active' : ''">
+					<a [routerLink]="'/admin'"><i class="fas fa-columns"></i> <span>Dashboard</span></a>
+				</li>
+				<li [class.active]="page === 'categories' || page === 'add-category' || page === 'edit-category'" >
+					<a [routerLink]="'/admin/categories'"><i class="fas fa-layer-group"></i> <span>Categories</span></a>
+				</li>
+				<li [class.active]="page === 'sub-categories' || page === 'add-sub-category' || page === 'edit-sub-category'">
+					<a [routerLink]="'/admin/sub-categories'"><i class="fab fa-buffer"></i> <span>Sub Categories</span></a>
+				</li>
+				<li [className]="page === 'services'? 'active' : ''">
+					<a [routerLink]="'/admin/services'"><i class="fas fa-bullhorn"></i> <span> Services</span></a>
+				</li>
+				<li [className]="page === 'booking-list'? 'active' : ''">
+					<a [routerLink]="'/admin/booking-list'"><i class="far fa-calendar-check"></i> <span> Booking List</span></a>
+				</li>
+				<li [className]="page === 'payments'? 'active' : ''">
+					<a [routerLink]="'/admin/payments'"><i class="fas fa-hashtag"></i> <span>Payments</span></a>
+				</li>
+				<li [class.active]="page === 'rating-type' || page === 'add-rating-type' || page === 'edit-rating-type'">
+					<a [routerLink]="'/admin/rating-type'"><i class="fas fa-star-half-alt"></i> <span>Rating Type</span></a>
+				</li>
+				<li [className]="page === 'ratings'? 'active' : ''">
+					<a [routerLink]="'/admin/ratings'"><i class="fas fa-star"></i> <span>Ratings</span></a>
+				</li>
+				<li [class.active]="page === 'subscriptions' || page === 'add-subscription' || page === 'edit-subscription'">
+					<a [routerLink]="'/admin/subscriptions'"><i class="far fa-calendar-alt"></i> <span>Subscriptions</span></a>
+				</li>
+				<li [className]="page === 'wallet'? 'active' : ''">
+					<a [routerLink]="'/admin/wallet'"><i class="fas fa-wallet"></i> <span> Wallet</span></a>
+				</li>
+				<li [className]="page === 'service-providers'? 'active' : ''">
+					<a [routerLink]="'/admin/service-providers'"><i class="fas fa-user-tie"></i> <span> Service Providers</span></a>
+				</li>
+				<li [className]="page === 'users'? 'active' : ''">
+					<a [routerLink]="'/admin/users'"><i class="fas fa-user"></i> <span>Users</span></a>
+				</li>
+				<!-- <li [className]="page === 'settings'? 'active' : ''">
+					<a [routerLink]="'/admin/settings'"><i class="fas fa-cog"></i> <span> Settings</span></a>
+				</li> -->
+				<li class="submenu">
+					<a [routerLink]="'/admin/general-settings'"><i class="fas fa-cog"></i> <span> Settings</span>
+						<span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+					</a>
+					<ul style="display: none;">
+						<li>
+							<a [routerLink]="'/admin/general-settings'" [className]="page === 'general-settings'? 'active' : ''"> <span> General Settings</span></a>
+						</li> 
+						<li>
+							<a [routerLink]="'/admin/system-settings'" [className]="page === 'system-settings'? 'active' : ''"> <span>System Settings</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/localization-settings'" [className]="page === 'localization-settings'? 'active' : ''"> <span>Localization </span></a>
+						</li>	
+						<li>
+							<a [routerLink]="'/admin/social-settings'" [className]="page === 'social-settings'? 'active' : ''"> <span> Social Settings</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/email-settings'" [className]="page === 'email-settings'? 'active' : ''"> <span> Email Settings</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/payment-settings'" [className]="page === 'payment-settings'? 'active' : ''"> <span>Payment Settings</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/seo-settings'" [className]="page === 'seo-settings'? 'active' : ''"> <span>SEO Settings</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/other-settings'" [className]="page === 'other-settings'? 'active' : ''"> <span> Others</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/theme-settings'" [className]="page === 'theme-settings'? 'active' : ''"> <span> Theme Settings</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/sms-gateway'" [className]="page === 'sms-gateway'? 'active' : ''"> <span> SMS Gateway</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/languages'" [className]="page === 'languages'? 'active' : ''"> <span> Language</span></a>
+						</li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a [routerLink]="'/admin/frontend-settings'" ><i class="fas fa-cog"></i> <span> Frontend Settings</span>
+						<span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+					</a>
+					<ul>
+						<li>
+							<a [routerLink]="'/admin/frontend-settings'" [className]="page === 'frontend-settings'? 'active' : ''"> <span> Header Settings</span></a>
+						</li> 
+						<li>
+							<a [routerLink]="'/admin/footer-settings'" [className]="page === 'footer-settings'? 'active' : ''"> <span>Footer Settings</span></a>
+						</li>
+						<li>
+							<a [routerLink]="'/admin/pages'" [className]="page === 'pages'? 'active' : ''"> <span>Pages </span></a>
+						</li>	
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /Sidebar -->

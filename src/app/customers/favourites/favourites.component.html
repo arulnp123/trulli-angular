@@ -1,0 +1,62 @@
+<h4 class="widget-title">Favourites</h4>
+						<div class="row">
+						
+							<div class="col-lg-4 col-md-6 d-flex" *ngFor="let slide of items">
+								<div class="service-widget flex-fill">
+									<div class="service-img">
+										<a [routerLink]="'/pages/service-details'">
+											<img class="img-fluid serv-img" alt="Service Image" src="{{slide.service_img}}">
+										</a>
+										<div class="fav-btn">
+											<a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(slide)" [ngClass]="{'favourite': slide.active}">
+												<i class="fas fa-heart"></i>
+											</a>
+										</div>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="javascript:void(0);">
+													<img src="{{slide.user_img}}" alt="">
+												</a>
+												<span class="service-price">$25</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" [routerLink]="'/pages/service-details'">{{slide.name}}</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a [routerLink]="'/pages/service-details'">{{slide.service_name}}</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<span class="d-inline-block average-rating">(4.3)</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Pagination Links --> 
+							<div class="pagination">
+								<ul>
+									<li class="active">
+										<a href="javascript:void(0);">1</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">2</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">3</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">4</a>
+									</li>
+									<li class="arrow">
+										<a href="javascript:void(0);"><i class="fas fa-angle-right"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
